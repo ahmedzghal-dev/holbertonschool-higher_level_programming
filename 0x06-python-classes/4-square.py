@@ -2,6 +2,8 @@
 """Square Class
 This is a square
 """
+
+
 class Square:
     """Square Class
     Square with size

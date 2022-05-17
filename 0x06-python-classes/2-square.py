@@ -2,6 +2,8 @@
 """Square class
 Defines a square
 """
+
+
 class Square:
     """Square Class
     Square with size validation
