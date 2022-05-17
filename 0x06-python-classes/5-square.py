@@ -17,6 +17,18 @@ class Square:
         """
         return self.__size * self.__size
 
+    def my_print(self):
+        """prints to stdout a square with char #
+        """
+        if self.__size == 0:
+            print()
+            return None
+
+        for i in range(self.__size):
+            for i in range(self.__size):
+                print('#', end='')
+            print()
+
     @property
     def size(self):
         return self.__size
