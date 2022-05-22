@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""prints a square with the character #"""
+
+
 def print_square(size):
+    """prints a square with the character #"""
     size = int(size)
 
     for i in range(size):
