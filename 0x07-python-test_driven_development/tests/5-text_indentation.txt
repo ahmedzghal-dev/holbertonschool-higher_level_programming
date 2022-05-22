@@ -1,0 +1,28 @@
+-Import=
+========
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+-Function Description-
+======================
+Testing a function that prints a text with 2 new lines
+ after each special character
+
+-Tests-
+=======
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?
+Non autem hoc: igitur ne illud quidem")
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Quonam modo?
+
+Utrum igitur tibi litteram videor an totas paginas commovere?
+
+Non autem hoc:
+
+igitur ne illud quidem.
+
+>>> text_indentation(9)
+Traceback (most recent call last):
+TypeError: text must be a string
