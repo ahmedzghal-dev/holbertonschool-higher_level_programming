@@ -1,0 +1,38 @@
+-Import=
+========
+    >>> print_square = __import__('4-print_square').print_square
+
+
+-Function Description-
+======================
+prints a square with the character #
+
+-Tests-
+=======
+>>> print_square(4)
+####
+####
+####
+####
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(0)
+
+
+>>> print_square(1)
+#
+
+>>> print_square(-1)
+Traceback (most recent call last):
+ValueError: size must be >= 0
