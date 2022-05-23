@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Square Class
-This is a square
+"""Rectangle Class
+This is a rectangle
 """
 
 
 class Rectangle:
-    """Square Class
-    Square with size
+    """Rectangle Class
+    rectangle with width and height
     """
     def __init__(self, width=0, height=0):
         """__init__
