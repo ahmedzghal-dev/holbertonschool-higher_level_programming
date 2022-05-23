@@ -104,8 +104,9 @@ class Rectangle:
         elif area1 < area2:
             return rect_2
 
+    @classmethod
     def square(cls, size=0):
-        """square classmethod
+        """
         this classmethod will return a new rectange with size
         as width and height
         """
