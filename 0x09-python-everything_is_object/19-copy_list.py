@@ -1,2 +1,2 @@
-def copy_list(a1=[]):
-    return a1[:]
+def copy_list(l2=[]):
+    return l2[:]
