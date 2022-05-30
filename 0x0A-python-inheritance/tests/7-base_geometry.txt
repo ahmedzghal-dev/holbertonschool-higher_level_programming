@@ -1,0 +1,50 @@
+====================
+-base_geometry module-
+====================
+
+-Import=
+========
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+-Function Description-
+======================
+Write a class BaseGeometry
+
+
+-Operation-
+===========
+• area() is not implemented
+
+• <name> must be an integer
+
+• <name> must be greater than 0
+
+-Tests-
+=======
+
+Test case #0: Testing valid case
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", 12)
+
+Test case #1: Testing area() method
+
+    >>> b = BaseGeometry()
+    >>> b.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+Test case #2: Testing invalid value type
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", "Not a number")
+    Traceback (most recent call last):
+    TypeError: Height must be an integer
+
+Test case #3: Testing negative value
+
+    >>> b = BaseGeometry()
+    >>> b.integer_validator("Height", -200)
+    Traceback (most recent call last):
+    ValueError: Height must be greater than 0
