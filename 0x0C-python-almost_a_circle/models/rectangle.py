@@ -1,6 +1,5 @@
 #!/usr/bin/python3*
-
-
+"""Writing the class Rectangle that inherits from Base"""
 from models.base import Base
 
 
@@ -14,7 +13,6 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-    """width public getter and setter"""
     @property
     def width(self):
         return self.__width
@@ -27,7 +25,6 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
         self.__width = Value
 
-    """height public getter and setter"""
     @property
     def height(self):
         return self.__height
@@ -40,7 +37,6 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = Value
 
-    """x public getter and setter"""
     @property
     def x(self):
         return self.__x
@@ -53,7 +49,6 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = Value
 
-    """y public getter and setter"""
     @property
     def y(self):
         return self.__y
@@ -66,12 +61,14 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = Value
 
-    """the area value of the Rectangle"""
     def area(self):
+        """area Method
+        this method will calculate the rectangle object's area
+        """
         return self.__width * self.__height
 
-    """print in stdout the Rectangle instance with the character #"""
     def display(self):
+        """print in stdout the Rectangle instance with the character #"""
         if self.width == 0 or self.height == 0:
             print("")
             return
@@ -81,39 +78,20 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             print('#' * self.__width)
 
-    """the __str__ method """
     def __str__(self):
+        """the __str__ method """
         return f'[Rectangle] ({self.id}) {self.__x}/{self.__y}'\
             f' - {self.__width}/{self.__height}'
 
     def update(self, *args, **kwargs):
-        """Update Rectangle
-        """
-        if args:
-            for i in range(len(args)):
-                if i == 0 and args[i] is not None:
-                    self.id = args[i]
-                elif i == 1:
-                    self.width = args[i]
-                elif i == 2:
-                    self.height = args[i]
-                elif i == 3:
-                    self.x = args[i]
-                elif i == 4:
-                    self.y = args[i]
+        """Update Rectangle"""
+        my_list = ["id", "width", "height", "x", "y"]
+        if args is None or not args:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
         else:
-            if kwargs:
-                for k, v in kwargs.items():
-                    if k == "id" and v is not None:
-                        self.id = v
-                    elif k == "width":
-                        self.width = v
-                    elif k == "height":
-                        self.height = v
-                    elif k == "x":
-                        self.x = v
-                    elif k == "y":
-                        self.y = v
+            for arg in range(len(args)):
+                setattr(self, my_list[arg], args[arg])
 
     def to_dictionary(self):
         """Return the dictionary representation of the rectangle"""
