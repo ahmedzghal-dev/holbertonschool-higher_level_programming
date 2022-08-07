@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
 cursor = db.cursor()
 cursor.execute(
-    "SELECT * FROM states WHERE name LIKE BINARY 'N%'ORDER BY id ASC")
+    "SELECT * FROM states WHERE name LIKE BINARY 'N%'ORDER BY id")
 result = cursor.fetchall()
 for a in result:
     """ loop through the states"""
