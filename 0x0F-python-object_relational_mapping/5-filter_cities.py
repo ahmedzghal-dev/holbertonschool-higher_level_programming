@@ -23,10 +23,7 @@ if __name__ == "__main__":
     cursor.execute(lists, (argv[4], ))
     results = cursor.fetchall()
     for city in results:
-        """ loop through the city"""
         cities.append(city[1])
     print(', '.join(cities))
     cursor.close()
-    """ close the cursor"""
     db.close()
-    """ close the database"""
