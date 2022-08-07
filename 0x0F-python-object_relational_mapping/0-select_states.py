@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""this a script that lists all states from the database hbtn_0e_0_usa"""
+""" Write a script that lists all states
+from the database hbtn_0e_0_usa """
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    """connect to database"""
+    """ connect to the database"""
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -12,17 +13,14 @@ if __name__ == "__main__":
         passwd=argv[2],
         db=argv[3]
     )
-# Start cursor
-cursor = db.cursor()
 
-# Query
-cursor.execute("SELECT * from states ORDER BY id ASC")
-result = cursor.fetchall()
-
-# Print query
-for a in result:
-    print(a)
-
-# Close cursor & dataBase
-cursor.close()
-db.close()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id")
+    result = cursor.fetchall()
+    for x in result:
+        """ this is a loop through the states"""
+        print(x)
+    cursor.close()
+    """ close the cursor"""
+    db.close()
+    """ close the database"""
