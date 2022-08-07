@@ -17,6 +17,7 @@ cursor = db.cursor()
 cursor.execute("SELECT * from states ORDER BY id ASC")
 result = cursor.fetchall()
 for a in result:
+    """ loop through the states"""
     print(a)
 
 """ close the cursor"""

@@ -17,6 +17,7 @@ if __name__ == "__main__":
     result = cursor.fetchall()
     for i in result:
         if i[1] == argv[4]:
+            """ loop through the states"""
             print(i)
 
     """ close the cursor"""

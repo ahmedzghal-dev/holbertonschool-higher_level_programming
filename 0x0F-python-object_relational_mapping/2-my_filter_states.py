@@ -16,6 +16,7 @@ cursor.execute(("SELECT * FROM states".format(argv[4])))
 result = cursor.fetchall()
 for a in result:
     if a[1] == argv[4]:
+        """ loop through the states"""
         print(a)
 """ close the cursor"""
 cursor.close()
