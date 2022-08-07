@@ -12,13 +12,15 @@ if __name__ == "__main__":
         passwd=argv[2],
         db=argv[3]
     )
-
+# Start cursor
 cursor = db.cursor()
+# Query
 cursor.execute("SELECT * from states ORDER BY id ASC")
 result = cursor.fetchall()
+# Print query
 for a in result:
     print(a)
 
-
+# Close cursor & database
 cursor.close()
 db.close()
