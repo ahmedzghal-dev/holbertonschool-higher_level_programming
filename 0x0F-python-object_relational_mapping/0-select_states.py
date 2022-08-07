@@ -4,7 +4,7 @@ import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    """connect to database"""
+
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -17,10 +17,8 @@ cursor = db.cursor()
 cursor.execute("SELECT * from states ORDER BY id ASC")
 result = cursor.fetchall()
 for a in result:
-    """ loop through the states"""
     print(a)
 
-""" close the cursor"""
+
 cursor.close()
-"""close the database"""
 db.close()
