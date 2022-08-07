@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" this  a script that lists all states with a name starting with N (upper N)
+""" this  a script that lists all states from
 from the database hbtn_0e_0_usa"""
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-    """ connect to database"""
+    """ connect to the database"""
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -21,7 +21,6 @@ result = cursor.fetchall()
 for a in result:
     """ loop through the states"""
     print(a)
-
 """ close the cursor"""
 cursor.close()
 """ close the database"""
