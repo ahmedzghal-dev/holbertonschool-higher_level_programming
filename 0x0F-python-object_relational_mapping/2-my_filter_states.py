@@ -17,8 +17,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute(
         ("SELECT * FROM states WHERE Name LIKE BINARY '{}'" +
-         "ORDER BY id".format(
-             argv[4])))
+         "ORDER BY id BY ASC".format(argv[4])))
     result = cursor.fetchall()
     for a in result:
         if a[1] == argv[4]:
