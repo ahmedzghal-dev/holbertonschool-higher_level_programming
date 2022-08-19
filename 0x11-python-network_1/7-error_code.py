@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
-
+Python script that takes in a URL,
+sends a request to the URL and displays
+the body of the response.
 """
 import requests
-from sys import argv
+import sys
 
 if __name__ == '__main__':
-    data = {
-        'email': argv[2]
-    }
-    data = requests.post(argv[1], data)
-    print(data.content.decode('utf-8'))
+    r = requests.get(sys.argv[1])
+    if r.status_code >= 400:
+        print("Error code: {}".format(r.status_code))
+    else:
+        print(r.text)
