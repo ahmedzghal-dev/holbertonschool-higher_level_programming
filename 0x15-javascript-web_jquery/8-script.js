@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const url = 'https://swapi-api.hbtn.io/api/films/?format=json';
 
 $.get(url, function (movie) {

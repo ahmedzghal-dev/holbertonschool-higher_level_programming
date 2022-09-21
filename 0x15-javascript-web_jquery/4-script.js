@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 $('#toggle_header').click(function () {
   if ($('header').hasClass('red')) {
     $('header').removeClass('red');
